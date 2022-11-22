@@ -6,7 +6,7 @@ import { Dog } from 'src/app/models/dog';
   templateUrl: './adopted-dog-item.component.html',
   styleUrls: ['./adopted-dog-item.component.sass']
 })
-export class adoptedDogItemComponent implements OnInit {
+export class AdoptedDogItemComponent implements OnInit {
 
   @Input()
   dog!: Dog;
