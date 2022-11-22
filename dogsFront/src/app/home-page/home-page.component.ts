@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.sass']
 })
 export class HomePageComponent {
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
 }
