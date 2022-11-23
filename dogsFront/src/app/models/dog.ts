@@ -5,4 +5,5 @@ export interface Dog {
   color: string;
   race: string;
   isAdopted: boolean;
+  imgUrl: string;
 }
