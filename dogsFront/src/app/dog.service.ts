@@ -13,7 +13,13 @@ export class DogService {
   constructor(private http: HttpClient) { }
 
   findAllUnadoptedDogs(): Observable<Dog[]> {
-    return this.http.get<Dog[]>(DogService.API_URL + '?is_adopted=false');
+    return this.http.get<Dog[]>(DogService.API_URL + '?isAdopted=false');
   }
+//******************* dogs adopts *********************************************
+
+  findAllAdoptedDogs(): Observable<Dog[]> {
+    return this.http.get<Dog[]>(DogService.API_URL + '?isAdopted=true');
+  }
+
 
 }
