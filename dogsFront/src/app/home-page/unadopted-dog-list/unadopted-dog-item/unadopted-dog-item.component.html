@@ -1,8 +1,10 @@
-<ul>
-  {{ dog.imgUrl}}
-<li>
-  nom : {{ dog.name}} </li>
-<li> genre : {{dog.sex}} </li>
-<li>  couleur : {{ dog.color}} </li>
-<li>  race :{{ dog.race}} </li>
-</ul>
+
+<div class="container">
+
+  <img [src]="dog.imgUrl" alt="image de chien" />
+  <p> Name : {{dog.name}}</p>
+  <p> Genre : {{dog.sex}}</p>
+  <p> Couleur : {{dog.color}}</p>
+  <p> Râce : {{dog.race}}</p>
+
+</div>
