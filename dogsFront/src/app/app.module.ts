@@ -8,6 +8,7 @@ import { UnadoptedDogListComponent } from './home-page/unadopted-dog-list/unadop
 import { UnadoptedDogItemComponent } from './home-page/unadopted-dog-list/unadopted-dog-item/unadopted-dog-item.component';
 import { AdoptedDogListComponent } from './home-page/adopted-dog-list/adopted-dog-list.component';
 import { AdoptedDogItemComponent } from './home-page/adopted-dog-list/adopted-dog-item/adopted-dog-item.component';
+import { HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AdoptedDogItemComponent } from './home-page/adopted-dog-list/adopted-do
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

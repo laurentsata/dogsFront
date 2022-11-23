@@ -5,16 +5,16 @@ import {AdoptedDogListComponent} from "./home-page/adopted-dog-list/adopted-dog-
 import {UnadoptedDogListComponent} from "./home-page/unadopted-dog-list/unadopted-dog-list.component";
 
 const routes: Routes = [{
-  path: '/' ,
+  path: '' ,
   component: HomePageComponent
 },
   {
-    path: '/unadopted' ,
+    path: 'unadopted' ,
     component: UnadoptedDogListComponent
   },
 
   {
-    path: '/adopted' ,
+    path: 'adopted' ,
     component: AdoptedDogListComponent
   }];
 

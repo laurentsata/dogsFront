@@ -1,1 +1,8 @@
-<app-adopted-dog-list></app-adopted-dog-list>
+<p>toto</p>
+
+<ul>
+  <app-adopted-dog-item
+    *ngFor="let dog of adoptedDogs"
+    [dog]="dog"
+  ></app-adopted-dog-item>
+</ul>
