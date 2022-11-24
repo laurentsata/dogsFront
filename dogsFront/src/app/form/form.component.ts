@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.sass']
 })
 export class FormComponent implements OnInit{
-  model: Order = new Order("" , 0, new Date(), "", "");
+  model: Order = new Order("", "", "", "", "", "" );
   submitted:boolean = false;
   constructor() { }
 
@@ -23,10 +23,11 @@ export class FormComponent implements OnInit{
 }
 export class Order {
   constructor(
-    public title: string,
-    public quantity: number,
-    public date: Date,
-    public contact: string,
-    public passwordUser: string,
+    public imgURL: string,
+    public name: string,
+    public sex: string,
+    public color: string,
+    public race: string,
+    public isAdopted: string,
   ) {}
 }

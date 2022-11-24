@@ -4,111 +4,140 @@
 <form #myForm="ngForm" (ngSubmit)="onSubmit()">
 
   <fieldset>
-    <label for="title-order">Title</label>
+    <label for="img-order">Image</label>
     <input
-      id="title-order"
-      name="title-order"
+      id="img-order"
+      name="img-order"
       type="text"
-      [(ngModel)]="model.title"
-      #title="ngModel"
+      [(ngModel)]="model.imgURL"
+      #img="ngModel"
       required
       minlength="5"
-      maxlength="30"
+      maxlength="300"
     />
   </fieldset>
 
-  <!-- Message d'erreurs de title -->
-  <div *ngIf="title.errors">
-    <span *ngIf="title.errors?.['required']">Le titre est requis</span>
-    <span *ngIf="title.errors?.['minlength']"
-    >La longueur minimale doit être supérieure à 3</span
+  <!-- Message d'erreurs de image -->
+  <div *ngIf="img.errors">
+    <span *ngIf="img.errors?.['required']">L'image est requise</span>
+    <span *ngIf="img.errors?.['minlength']"
+    >La longueur minimale doit être supérieure à 5</span
     >
-    <span *ngIf="title.errors?.['maxlength']"
-    >La longueur maximale doit être inférieure à 15</span
+    <span *ngIf="img.errors?.['maxlength']"
+    >La longueur maximale doit être inférieure à 300</span
     >
   </div>
 
   <fieldset>
-    <label for="quantity-order">Quantité</label>
+    <label for="name-order">Name</label>
     <input
-      id="quantity-order"
-      name="quantity-order"
-      [(ngModel)]="model.quantity"
-      #quantity="ngModel"
-      type="number"
+      id="name-order"
+      name="name-order"
+      [(ngModel)]="model.name"
+      #name="ngModel"
+      type="text"
       required
     />
   </fieldset>
 
-  <!-- Message d'erreurs de quantity -->
-  <div *ngIf="quantity.errors">
-    <span *ngIf="quantity.errors?.['required']"
-    >Le champ quantité est requis</span
+  <!-- Message d'erreurs de nom -->
+  <div *ngIf="name.errors">
+    <span *ngIf="name.errors?.['required']"
+    >Le nom est requis</span
     >
   </div>
 
   <fieldset>
-    <label for="date-order">Date de commande</label>
+    <label for="sex-order">Genre</label>
     <input
-      id="date-order"
-      name="date-order"
-      type="date"
-      [(ngModel)]="model.date"
-      #date="ngModel"
+      id="sex-order"
+      name="sex-order"
+      type="text"
+      [(ngModel)]="model.sex"
+      #sex="ngModel"
       required
     />
   </fieldset>
 
-  <!-- Message d'erreurs de date -->
-  <div *ngIf="date.errors">
-    <span *ngIf="date.errors?.['required']">Le champ email est requis</span>
+  <!-- Message d'erreurs de sex -->
+  <div *ngIf="sex.errors">
+    <span *ngIf="sex.errors?.['required']">Le genre est requis</span>
   </div>
 
   <fieldset>
-    <label for="contact-order">Contact</label>
+    <label for="color-order">Couleur</label>
     <input
-      id="contact-order"
-      name="contact-order"
-      type="email"
-      [(ngModel)]="model.contact"
-      #contact="ngModel"
+      id="color-order"
+      name="color-order"
+      type="text"
+      [(ngModel)]="model.color"
+      #color="ngModel"
       required
       email
     />
   </fieldset>
 
-  <!-- Message d'erreurs de contact -->
-  <div *ngIf="contact.errors">
-    <span *ngIf="contact.errors?.['required']">Le champ email est requis</span>
-    <span *ngIf="contact.errors?.['email']"
-    >L'adresse email doit être valide</span
+  <!-- Message d'erreurs de couleur -->
+  <div *ngIf="color.errors">
+    <span *ngIf="color.errors?.['required']">La couleur est requise</span>
+    <span *ngIf="color.errors?.['color']"
+    >La couleur est requise</span
     >
   </div>
 
   <fieldset>
-    <label for="passwordUser-order">Mot de passe</label>
+    <label for="race-order">Râce</label>
     <input
-      id="pass-order"
-      pass="passwordUser-order"
-      type="password"
-      [(ngModel)]="model.passwordUser"
-      #passwordForm="ngModel"
+      id="race-order"
+      name="race-order"
+      type="text"
+      [(ngModel)]="model.race"
+      #race="ngModel"
       required
       minlength="5"
       maxlength="15"
     />
   </fieldset>
   <span
-    *ngIf="passwordForm.invalid && passwordForm.dirty && passwordForm.touched"
+    *ngIf="race.invalid && race.dirty && race.touched"
   >
-    <div *ngIf="passwordForm.errors">
-      <span *ngIf="passwordForm.errors?.['required']"
-      >Le mot de passe est requis</span
+    <div *ngIf="race.errors">
+      <span *ngIf="race.errors?.['required']"
+      >La race est requise</span
       >
-      <span *ngIf="passwordForm.errors?.['minlength']"
+      <span *ngIf="race.errors?.['minlength']"
       >La longueur maximale doit être supérieure à 5</span
       >
-      <span *ngIf="passwordForm.errors?.['maxlength']"
+      <span *ngIf="race.errors?.['maxlength']"
+      >La longueur maximale doit être inférieure à 15</span
+      >
+    </div>
+  </span>
+
+  <fieldset>
+    <label for="isAdopted-order">Est il adopté ?</label>
+    <input
+      id="isAdopted-order"
+      name="isAdopted-order"
+      type="number"
+      [(ngModel)]="model.isAdopted"
+      #isAdopted="ngModel"
+      required
+      minlength="5"
+      maxlength="15"
+    />
+  </fieldset>
+  <span
+    *ngIf="isAdopted.invalid && isAdopted.dirty && isAdopted.touched"
+  >
+    <div *ngIf="isAdopted.errors">
+      <span *ngIf="isAdopted.errors?.['required']"
+      >La le status est requis</span
+      >
+      <span *ngIf="isAdopted.errors?.['minlength']"
+      >La longueur maximale doit être supérieure à 5</span
+      >
+      <span *ngIf="isAdopted.errors?.['maxlength']"
       >La longueur maximale doit être inférieure à 15</span
       >
     </div>
