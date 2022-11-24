@@ -11,6 +11,7 @@ import { AdoptedDogItemComponent } from './home-page/adopted-dog-list/adopted-do
 import { HttpClientModule} from "@angular/common/http";
 import { FormComponent } from './form/form.component';
 import {FormsModule} from "@angular/forms";
+import { FormUpdateComponent } from './form-update/form-update.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {FormsModule} from "@angular/forms";
     UnadoptedDogItemComponent,
     AdoptedDogListComponent,
     AdoptedDogItemComponent,
-    FormComponent
+    FormComponent,
+    FormUpdateComponent
   ],
   imports: [
     BrowserModule,
