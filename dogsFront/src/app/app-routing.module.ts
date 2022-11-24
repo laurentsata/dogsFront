@@ -4,6 +4,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import {AdoptedDogListComponent} from "./home-page/adopted-dog-list/adopted-dog-list.component";
 import {UnadoptedDogListComponent} from "./home-page/unadopted-dog-list/unadopted-dog-list.component";
 import {FormComponent} from "./form/form.component";
+import { FormUpdateComponent } from './form-update/form-update.component';
 
 const routes: Routes = [{
   path: '' ,
@@ -22,6 +23,10 @@ const routes: Routes = [{
   {
     path: 'form' ,
     component: FormComponent
+  },
+  {
+    path: 'update/:id',
+    component: FormUpdateComponent
   }
 ];
 

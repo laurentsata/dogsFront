@@ -15,6 +15,10 @@ export class DogService {
   findAllUnadoptedDogs(): Observable<Dog[]> {
     return this.http.get<Dog[]>(DogService.API_URL + '?isAdopted=false');
   }
+  findDogById(id: number): Observable<Dog> {
+    return this.http.get<Dog>(DogService.API_URL + '/' + id);
+  }
+
 //******************* dogs adopts *********************************************
 
   findAllAdoptedDogs(): Observable<Dog[]> {
