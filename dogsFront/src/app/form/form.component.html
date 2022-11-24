@@ -1,4 +1,5 @@
 <app-header></app-header>
+<div class="container">
 <form #myForm="ngForm" (ngSubmit)="onSubmit()">
   <div class="murc">
     Form submitted ? {{myForm.submitted}}
@@ -147,4 +148,5 @@
   <button type="reset">Restaurer</button>
   <button type="submit" >Sauvegarder</button>
 </form>
+</div>
 <!-- [disabled]="myForm.invalid" -->
