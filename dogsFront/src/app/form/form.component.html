@@ -2,6 +2,11 @@
 
 
 <form #myForm="ngForm" (ngSubmit)="onSubmit()">
+  <div>
+    Form submitted ? {{myForm.submitted}}
+    Form valid ? {{myForm.valid}}
+    Form invalid ? {{myForm.valid}}
+  </div>
 
   <fieldset>
     <label for="img-order">Image</label>
@@ -9,7 +14,7 @@
       id="img-order"
       name="img-order"
       type="text"
-      [(ngModel)]="model.imgURL"
+      [(ngModel)]="model.imgUrl"
       #img="ngModel"
       required
       minlength="5"
@@ -142,5 +147,6 @@
     </div>
   </span>
   <button type="reset">Restaurer</button>
-  <button type="submit" [disabled]="myForm.invalid">Sauvegarder</button>
+  <button type="submit" >Sauvegarder</button>
 </form>
+<!-- [disabled]="myForm.invalid" -->

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DogService } from '../dog.service';
+import { Router } from '@angular/router';
+import { Dog } from '../models/dog';
+
 // import { Order } from './sign-up.component';
 
 @Component({
@@ -8,11 +11,12 @@ import { DogService } from '../dog.service';
   styleUrls: ['./form.component.sass']
 })
 export class FormComponent implements OnInit{
-  model: Order = new Order("", "", "", "", "", "" );
+  model: Dog = {id: 0, name:"", color:"", imgUrl:"", race:"", isAdopted:false, sex:""};
   submitted:boolean = false;
-  router: any;
-  dogService: any;
-  constructor() { }
+
+  constructor(private service:DogService, private router:Router) { }
+
+
 
   ngOnInit(): void {
   }
@@ -22,23 +26,12 @@ export class FormComponent implements OnInit{
     // form submitted
     //this.submitted = true;
     //console.log(this.model);
-    this.dogService.update(this.dogUpdate)
+    this.service.create(this.model)
      .subscribe(() => {
         this.router.navigate(['']);
       });
   }
-  dogUpdate(dogUpdate: any) {
-    throw new Error('Method not implemented.');
-  }
+  
 }
 
-export class Order {
-  constructor(
-    public imgURL: string,
-    public name: string,
-    public sex: string,
-    public color: string,
-    public race: string,
-    public isAdopted: string,
-  ) {}
-}
+
