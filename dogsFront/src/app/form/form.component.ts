@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DogService } from '../dog.service';
 // import { Order } from './sign-up.component';
 
 @Component({
@@ -9,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class FormComponent implements OnInit{
   model: Order = new Order("", "", "", "", "", "" );
   submitted:boolean = false;
+  router: any;
+  dogService: any;
   constructor() { }
 
   ngOnInit(): void {
@@ -17,10 +20,18 @@ export class FormComponent implements OnInit{
 
   onSubmit(): void {
     // form submitted
-    this.submitted = true;
-    console.log(this.model);
+    //this.submitted = true;
+    //console.log(this.model);
+    this.dogService.update(this.dogUpdate)
+     .subscribe(() => {
+        this.router.navigate(['']);
+      });
+  }
+  dogUpdate(dogUpdate: any) {
+    throw new Error('Method not implemented.');
   }
 }
+
 export class Order {
   constructor(
     public imgURL: string,
