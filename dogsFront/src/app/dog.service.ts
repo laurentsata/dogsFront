@@ -33,8 +33,8 @@ export class DogService {
     return this.http.put<Dog>(`${DogService.API_URL}/${dog.id}`, dog);
   }
 
-  deleteDog(dog: Dog): Observable<Dog> {
-    return this.http.delete<Dog>(DogService.API_URL + `/${dog.id}`);
+  deleteDog(id: number): Observable<Dog> {
+    return this.http.delete<Dog>(DogService.API_URL + `/${id}`);
   }
   //postDogs(): Observable<Dog> {
   //  return this.http.post<Dog>(`${DogService.API_URL}/${dog.id}`);

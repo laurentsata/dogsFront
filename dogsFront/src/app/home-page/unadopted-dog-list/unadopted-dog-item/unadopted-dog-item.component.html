@@ -8,5 +8,6 @@
   <p> Râce : {{dog.race}}</p>
   <button type="button">Adoptez-moi</button>
   <a [routerLink]='["/update", dog.id]'><button type="button">Modifier</button></a>
+  <button type="button" (click)="delete(dog.id)">Effacer</button>
 
 </div>
