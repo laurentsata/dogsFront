@@ -1,6 +1,17 @@
 .Adopt
   font-size: 120%
   color: red
+  display: flex
+  text-decoration: underline
+  animation: Unadopted 12s infinite
+
+@keyframes Unadopted
+  0%
+    transform: translate(1%)
+  50%
+    transform: translate(80%)
+  80%
+    transform: translate(1%)
 
 ul
   display: flex
