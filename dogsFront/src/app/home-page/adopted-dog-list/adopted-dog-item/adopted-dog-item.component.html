@@ -5,5 +5,7 @@
   <p class="Genre"> Genre : {{dog.sex}}</p>
   <p> Couleur : {{dog.color}}</p>
   <p> Râce : {{dog.race}}</p>
+  <a [routerLink]='["/update", dog.id]'><button type="button">Modifier</button></a>
+  <button type="button" (click)="delete(dog.id)">Effacer</button>
 
 </div>
