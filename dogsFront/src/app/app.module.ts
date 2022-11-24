@@ -9,6 +9,8 @@ import { UnadoptedDogItemComponent } from './home-page/unadopted-dog-list/unadop
 import { AdoptedDogListComponent } from './home-page/adopted-dog-list/adopted-dog-list.component';
 import { AdoptedDogItemComponent } from './home-page/adopted-dog-list/adopted-dog-item/adopted-dog-item.component';
 import { HttpClientModule} from "@angular/common/http";
+import { FormComponent } from './form/form.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { HttpClientModule} from "@angular/common/http";
     UnadoptedDogListComponent,
     UnadoptedDogItemComponent,
     AdoptedDogListComponent,
-    AdoptedDogItemComponent
+    AdoptedDogItemComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
