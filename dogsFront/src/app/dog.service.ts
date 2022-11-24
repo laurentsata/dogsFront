@@ -21,12 +21,16 @@ export class DogService {
     return this.http.get<Dog[]>(DogService.API_URL + '?isAdopted=true');
   }
 
+  create(dog: Dog): Observable<Dog> {
+    return this.http.post<Dog>(DogService.API_URL, dog);
+  }
+
   update(dog: Dog): Observable<Dog> {
     return this.http.put<Dog>(`${DogService.API_URL}/${dog.id}`, dog);
   }
 
-  deleteDog(id: number): Observable<Dog> {
-    return this.http.delete<Dog>(DogService.API_URL + `/${id}`);
+  deleteDog(dog: Dog): Observable<Dog> {
+    return this.http.delete<Dog>(DogService.API_URL + `/${dog.id}`);
   }
   //postDogs(): Observable<Dog> {
   //  return this.http.post<Dog>(`${DogService.API_URL}/${dog.id}`);
