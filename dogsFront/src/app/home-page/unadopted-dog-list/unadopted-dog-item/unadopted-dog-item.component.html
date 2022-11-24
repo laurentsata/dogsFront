@@ -6,8 +6,9 @@
   <p> Genre : {{dog.sex}}</p>
   <p> Couleur : {{dog.color}}</p>
   <p> Râce : {{dog.race}}</p>
-  <button type="button">Adoptez-moi</button>
-  <a [routerLink]='["/update", dog.id]'><button type="button">Modifier</button></a>
+  <!--<button *ngIf="!dog.isAdopted" type="button" class="btn-adopt" (click)="update (dog.id)">Adopter</button>
+  <button type="button">Adoptez-moi</button> -->
+  <a [routerLink]='["/update", dog.id]'><button type="button" class="btn-update">Modifier</button></a>
   <button type="button" (click)="delete(dog.id)">Effacer</button>
 
 </div>

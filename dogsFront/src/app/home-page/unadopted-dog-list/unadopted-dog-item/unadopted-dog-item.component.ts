@@ -26,4 +26,10 @@ export class UnadoptedDogItemComponent implements OnInit {
     window.location.reload())
   }
 
+  //update(id: number): void {
+   // this.dogService.updateDog(id).subscribe((rep : Dog) =>
+      //this.router.navigateByUrl('/'));
+     // window.location.reload())
+ // }
+
 }

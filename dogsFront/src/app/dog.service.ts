@@ -36,7 +36,9 @@ export class DogService {
   deleteDog(id: number): Observable<Dog> {
     return this.http.delete<Dog>(DogService.API_URL + `/${id}`);
   }
-  //postDogs(): Observable<Dog> {
-  //  return this.http.post<Dog>(`${DogService.API_URL}/${dog.id}`);
-  //  }
+
+  //updateDog(id: number): Observable<Dog> {
+   // return this.http.put<Dog>( DogService.API_URL + `/${id}`);
+
+ // }
 }

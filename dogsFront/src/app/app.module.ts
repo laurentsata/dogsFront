@@ -12,6 +12,7 @@ import { HttpClientModule} from "@angular/common/http";
 import { FormComponent } from './form/form.component';
 import {FormsModule} from "@angular/forms";
 import { FormUpdateComponent } from './form-update/form-update.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormUpdateComponent } from './form-update/form-update.component';
     AdoptedDogListComponent,
     AdoptedDogItemComponent,
     FormComponent,
-    FormUpdateComponent
+    FormUpdateComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
