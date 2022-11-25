@@ -13,7 +13,11 @@ export class UnadoptedDogListComponent implements OnInit{
   constructor(private dogService: DogService) { }
 
   ngOnInit(): void {
-    this.dogService.findAllUnadoptedDogs().subscribe(dogs => this.unadoptedDogs = dogs);
+    this.refreshList();
+  }
+
+  refreshList(): void {
+    this.dogService.findAllUnadoptedDogs().subscribe(dogs => this.unadoptedDogs =dogs);
   }
 
 }

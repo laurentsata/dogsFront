@@ -4,5 +4,6 @@
   <app-unadopted-dog-item
     *ngFor="let dog of unadoptedDogs"
     [dog]="dog"
+    (refresh)="refreshList()"
   ></app-unadopted-dog-item>
 </ul>

@@ -4,13 +4,12 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DogService {
-
   private static readonly API_URL = 'http://localhost:8080/dogs';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   findAllUnadoptedDogs(): Observable<Dog[]> {
     return this.http.get<Dog[]>(DogService.API_URL + '?isAdopted=false');
@@ -19,7 +18,7 @@ export class DogService {
     return this.http.get<Dog>(DogService.API_URL + '/' + id);
   }
 
-//******************* dogs adopts *********************************************
+  //******************* dogs adopts *********************************************
 
   findAllAdoptedDogs(): Observable<Dog[]> {
     return this.http.get<Dog[]>(DogService.API_URL + '?isAdopted=true');
@@ -37,8 +36,7 @@ export class DogService {
     return this.http.delete<Dog>(DogService.API_URL + `/${id}`);
   }
 
-  //updateDog(id: number): Observable<Dog> {
-   // return this.http.put<Dog>( DogService.API_URL + `/${id}`);
-
- // }
+  adoptDog(id: number): Observable<Dog> {
+    return this.http.post<Dog>(`${DogService.API_URL}/${id}/adopt`, {});
+  }
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { outputAst } from '@angular/compiler';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { DogService } from 'src/app/dog.service';
 import { Dog } from 'src/app/models/dog';
@@ -13,6 +14,10 @@ export class UnadoptedDogItemComponent implements OnInit {
   @Input()
   dog!: Dog;
 
+  @Output()
+  refresh: EventEmitter<void> = new EventEmitter();
+
+
   constructor(private dogService: DogService, private router: Router) {
     //this.router.routeReuseStrategy.shouldReuseRoute = () => {return false;}
    }
@@ -23,13 +28,13 @@ export class UnadoptedDogItemComponent implements OnInit {
   delete(id: number): void {
     this.dogService.deleteDog(id).subscribe((rep) =>
     //this.router.navigateByUrl('/'));
-    window.location.reload())
+    this.refresh.emit())
   }
 
-  //update(id: number): void {
-   // this.dogService.updateDog(id).subscribe((rep : Dog) =>
-      //this.router.navigateByUrl('/'));
-     // window.location.reload())
- // }
+  adopt(): void {
+    this.dogService.adoptDog(this.dog.id).subscribe((rep) =>
+    //this.router.navigateByUrl('/'));
+    this.refresh.emit())
+  }
 
 }
